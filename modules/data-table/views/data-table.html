@@ -24,7 +24,7 @@
             <tr ng-class="{ 'data-table__selectable-row': lxDataTable.selectable,
                             'data-table__selectable-row--is-disabled': lxDataTable.selectable && tr.lxDataTableDisabled,
                             'data-table__selectable-row--is-selected': lxDataTable.selectable && tr.lxDataTableSelected }"
-                ng-repeat="tr in lxDataTable.tbody"
+                ng-repeat="tr in lxDataTable.tbody track by $index"
                 ng-click="lxDataTable.toggle(tr)">
                 <td ng-if="lxDataTable.thumbnail">
                     <div ng-if="lxDataTable.thead[0].format" ng-bind-html="lxDataTable.$sce.trustAsHtml(lxDataTable.thead[0].format(tr))"></div>
